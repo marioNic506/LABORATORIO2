@@ -1,0 +1,21 @@
+{
+  "name": "laboratory-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file .env --watch server.js",
+    "start": "node --env-file .env server.js",
+    "seed": "node --env-file .env script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.13.0",
+    "uuid": "^10.0.0"
+  }
+}
