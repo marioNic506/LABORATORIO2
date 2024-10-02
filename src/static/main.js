@@ -1,5 +1,5 @@
-const baseProductUrl = "/api/product";
-const baseClientUrl = "/api/client";
+const baseProductUrl = "./api/product";
+const baseClientUrl = "./api/client";
 
 function loadData(url, label, container) {
   fetch(url)
@@ -255,19 +255,29 @@ function postData(data, url) {
 }
 
 function onSubmitProduct(event) {
-  // event.preventDefault();
-
-  // logica para la recuparacion de datos
-
-  postData(data, baseProductUrl);
-}
-
-function onSubmitClient(event) {
-  // event.preventDefault();
-  // logica para la recuparacion de datos
-
-  postData(data, baseClientUrl);
-}
+    event.preventDefault();
+    const form = event.target;
+    const data = {
+      name: form.name.value,
+      price: parseFloat(form.price.value),
+      description: form.description.value,
+      category: form.category.value,
+    };
+    postData(data, baseProductUrl);
+  }
+  
+  function onSubmitClient(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = {
+      fullName: form.fullName.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      address: form.address.value,
+    };
+    postData(data, baseClientUrl);
+  }
+  
 
 loadData(baseProductUrl, "product", "app-product"); //
 loadData(baseClientUrl, "client", "app-client"); //

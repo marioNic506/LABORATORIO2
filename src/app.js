@@ -11,7 +11,7 @@ app.use(express.static(_dirname + "/static"));
 console.log(_dirname);
 
 app.get("/", (req, res) => {
-  res.sendFile(_dirname + "/static/index.html");
+  res.sendFile(_dirname + "./static/index.html");
 });
 
 app.use("/api", AppRouter);
